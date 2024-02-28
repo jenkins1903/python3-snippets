@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список товаров</title>
+</head>
+<body>
+    <h1>Список товаров</h1>
+    <ol>
+        {% for item in items %}
+            <li><a href="{% url 'item' item.id %}">{{ item.name }}</a> - {% if item.quantity == 0 %}товар отсутствует{% else %}{{ item.quantity }}{% endif %}</li>
+        {% endfor %}
+    </ol>
+    <a href="/">Назад на главную</a>
+</body>
+</html>
+
+
